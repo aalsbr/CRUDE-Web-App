@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="DefaultConnection-Web.config Connection String" description="DefaultConnection Connection String used in web.config by the application to access the database." defaultValue="Data Source=(LocalDb)\MSSQLLocalDB;Initial Catalog=aspnet-kfc_project_fall2020-60463371-f1d4-473e-82d7-d88320756f74;AttachDbFilename=|DataDirectory|\aspnet-kfc_project_fall2020-60463371-f1d4-473e-82d7-d88320756f74.mdf;Integrated Security=SSPI" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\prroject\\kfc_fall2020\\kfc_fall2020\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DefaultConnection']/@connectionString" />
+  </parameter>
+  <parameter name="kfc_project_fall2020ConnectionString-Web.config Connection String" description="kfc_project_fall2020ConnectionString Connection String used in web.config by the application to access the database." defaultValue="Data Source=DESKTOP-SCKFMC2\SQLEXPRESS;Initial Catalog=kfc_project_fall2020;Integrated Security=True" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\prroject\\kfc_fall2020\\kfc_fall2020\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='kfc_project_fall2020ConnectionString']/@connectionString" />
+  </parameter>
+  <parameter name="kfc_external-Web.config Connection String" description="kfc_external Connection String used in web.config by the application to access the database." defaultValue=" Data Source=sql5085.site4now.net;Initial Catalog=DB_A687D7_analdawsari;User ID=DB_A687D7_analdawsari_admin;Password=And123567!;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\prroject\\kfc_fall2020\\kfc_fall2020\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='kfc_external']/@connectionString" />
+  </parameter>
+</parameters>

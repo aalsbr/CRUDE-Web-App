@@ -1,0 +1,103 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="kfc_fall2020.SiteMaster" %>
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%: Page.Title %> - KFMC Project</title>
+     <link href="~/style/Site.css" rel="stylesheet" type="text/css" />
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/bundles/modernizr") %>
+    </asp:PlaceHolder>
+        <script type="text/javascript" src="../Scripts/tiny_mce/tiny_mce.js"></script>
+        <script type="text/javascript" lang="javascript">
+        tinyMCE.init({
+            // General options
+            mode: "textareas",
+            theme: "advanced",
+            plugins: "pagebreak,style,layer,table,save,advhr,advimage,advlink,emotions,iespell,inlinepopups",
+        });
+    </script>
+
+
+    <webopt:bundlereference runat="server" path="~/Content/css" />
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+
+    <style type="text/css">
+        .auto-style1 {
+            position: static;
+            margin-top: 0px;
+            padding: 0px;
+            z-index: 0;
+            background-color: #424040;
+            width: 100%;
+            height: 52px;
+        }
+
+        h3{
+
+            padding-left:20px;
+            margin-top:-20px
+        }
+        </style>
+    <h3>King Fahd Medical City Project </h3>
+</head>
+<body>
+    <form runat="server">
+        <asp:ScriptManager runat="server">
+            <Scripts>
+                <%--To learn more about bundling scripts in ScriptManager see https://go.microsoft.com/fwlink/?LinkID=301884 --%>
+                <%--Framework Scripts--%>
+                <asp:ScriptReference Name="MsAjaxBundle" />
+                <asp:ScriptReference Name="jquery" />
+                <asp:ScriptReference Name="bootstrap" />
+                <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
+                <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
+                <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
+                <asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="~/Scripts/WebForms/GridView.js" />
+                <asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js" />
+                <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
+                <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
+                <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
+                <asp:ScriptReference Name="WebFormsBundle" />
+                <%--Site Scripts--%>
+            </Scripts>
+        </asp:ScriptManager>
+        <div class="auto-style1">
+
+           
+        <asp:Menu ID="NavigationMenu" runat="server" CssClass="menu" EnableViewState="False"
+            IncludeStyleBlock="False" Orientation="Horizontal"
+            OnMenuItemClick="NavigationMenu_MenuItemClick" style="font-size: large">
+            <DynamicItemTemplate>
+                <%# Eval("Text") %>
+            </DynamicItemTemplate>
+            <Items>
+      
+                    <asp:MenuItem NavigateUrl="~/" Text="Home" Value="" />
+                    <asp:MenuItem NavigateUrl="~/About" Text="About Us" Value="" />
+                    <asp:MenuItem NavigateUrl="~/crudopr/cruderege" Text="CRUD" Value=""/>
+                    <asp:MenuItem NavigateUrl="~/upload.aspx" Text="Upload file" Value=""/>
+                    <asp:MenuItem NavigateUrl="~/contact_us" Text="Contact Us" Value=""/>
+                   
+                     
+           
+
+            </Items>
+            <StaticItemTemplate>
+                <%# Eval("Text") %>
+            </StaticItemTemplate>
+        </asp:Menu>
+           
+            </div>
+    
+        <div class="main">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+
+    </form>
+</body>
+</html>
